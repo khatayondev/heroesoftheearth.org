@@ -1,0 +1,107 @@
+.cardContainer {
+  perspective: 1000px;
+  width: 100%;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-sand-dark);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  height: 100%;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-premium);
+  border-color: var(--color-sage);
+}
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.iconWrapper {
+  color: var(--color-sage);
+  background: rgba(44, 90, 71, 0.06);
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.points {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--color-sage);
+  font-size: 1.1rem;
+}
+
+.title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.desc {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-light);
+  margin: 0;
+  flex-grow: 1;
+}
+
+.meta {
+  display: flex;
+  gap: var(--space-md);
+  border-top: 1px solid rgba(44, 90, 71, 0.05);
+  padding-top: var(--space-md);
+  margin-top: auto;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+  font-weight: 600;
+}
+
+.metaIcon {
+  color: var(--color-sage-light);
+}
+
+.badge {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+}
+
+.easy {
+  background-color: rgba(44, 90, 71, 0.08);
+  color: var(--color-sage);
+}
+
+.medium {
+  background-color: rgba(217, 107, 67, 0.08);
+  color: var(--color-coral);
+}
+
+.hard {
+  background-color: rgba(217, 107, 67, 0.12);
+  color: var(--color-coral);
+}

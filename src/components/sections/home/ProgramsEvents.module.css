@@ -1,0 +1,330 @@
+.section {
+  width: 100%;
+  position: relative;
+  background-color: var(--color-white); /* White background as requested */
+  padding: var(--space-5xl) 0;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: var(--space-3xl);
+  align-items: center;
+  transition: all 0.5s ease;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: var(--color-dark);
+  position: relative;
+  z-index: 10;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: var(--color-dark);
+  margin: 0 0 var(--space-md) 0;
+  letter-spacing: -1.5px;
+}
+
+.leadText {
+  font-family: var(--font-body);
+  font-size: clamp(1.05rem, 1.8vw, 1.15rem);
+  line-height: 1.65;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-lg) 0;
+  max-width: 500px;
+}
+
+.metaInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-xl);
+  font-size: 0.95rem;
+}
+
+.metaLabel {
+  color: rgba(21, 33, 25, 0.45);
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.metaValue {
+  color: var(--color-sage); /* Deep green on light BG */
+  font-weight: 600;
+}
+
+.btnWrapper {
+  margin-bottom: var(--space-2xl);
+}
+
+.ctaBtn {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border: none;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.ctaBtn:hover {
+  background-color: var(--color-sage);
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(44, 90, 71, 0.25);
+}
+
+.navControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 500px;
+  border-top: 1px solid rgba(21, 33, 25, 0.1);
+  padding-top: var(--space-lg);
+  margin-top: var(--space-md);
+}
+
+.numDots {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.dotBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.3s ease;
+}
+
+.dotNum {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(21, 33, 25, 0.35);
+  transition: all 0.3s ease;
+}
+
+.dotLine {
+  width: 16px;
+  height: 2px;
+  background-color: rgba(21, 33, 25, 0.15);
+  transition: all 0.3s ease;
+}
+
+.dotActive .dotNum {
+  color: var(--color-sage);
+}
+
+.dotActive .dotLine {
+  width: 32px;
+  background-color: var(--color-sage);
+}
+
+.arrowTriggers {
+  display: flex;
+  gap: 12px;
+}
+
+.arrowBtn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid rgba(21, 33, 25, 0.15);
+  background: rgba(21, 33, 25, 0.03);
+  color: var(--color-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.arrowBtn:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-color: var(--color-dark);
+  transform: scale(1.05);
+}
+
+/* Right Column: Card Carousel Track */
+.carouselContainer {
+  overflow: visible !important;
+  width: 100%;
+  position: relative;
+  z-index: 5; /* Higher z-index to cover text column when scrolling leftward */
+  padding: var(--space-xl) 0;
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  transition: transform 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  width: max-content;
+}
+
+.card {
+  position: relative;
+  width: 280px;
+  height: 300px;
+  border-radius: var(--radius-xl);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.55;
+  transform: scale(0.92);
+  transition: all 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card:hover {
+  opacity: 0.8;
+  transform: scale(0.95);
+}
+
+.activeCard {
+  height: 390px;
+  opacity: 1 !important;
+  transform: scale(1) !important;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15, 23, 20, 0.1) 0%, rgba(15, 23, 20, 0.85) 100%);
+  z-index: 1;
+}
+
+.cardContent {
+  position: absolute;
+  inset: 0;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 2;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cardIconWrapper {
+  color: #d2f5d8;
+  background: rgba(210, 245, 216, 0.1);
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.cardCategory {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.cardBottom {
+  color: var(--color-white);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  margin: 0 0 6px 0;
+  color: var(--color-white);
+  line-height: 1.25;
+}
+
+.cardDate {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 992px) {
+  .section {
+    padding: var(--space-4xl) 0;
+  }
+  
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  
+  .carouselContainer {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding-bottom: var(--space-md);
+    scrollbar-width: none; /* Hide scrollbar for clean aesthetics */
+  }
+  
+  .carouselContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .carouselTrack {
+    transform: none !important;
+    padding: 0 var(--space-xs);
+  }
+  
+  .card {
+    width: 250px;
+    height: 280px;
+    opacity: 0.75;
+    transform: none !important;
+  }
+  
+  .activeCard {
+    height: 330px;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .textCol {
+    max-width: 100%;
+  }
+  
+  .leadText {
+    max-width: 100%;
+  }
+}

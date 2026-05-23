@@ -1,0 +1,276 @@
+.page {
+  min-height: 100vh;
+  background-color: var(--color-white); /* Pristine white background as requested */
+  padding: calc(80px + var(--space-2xl)) 0 var(--space-5xl) 0; /* Padding offsets fixed navbar */
+}
+
+.pageContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--space-xl);
+}
+
+/* Landscape Widescreen Fluid Hero Banner Card */
+.heroBanner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 21/8;
+  min-height: 300px;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  background-image: url('/images/hero-sea-bg.png'); /* Organic ocean fluid texture */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--space-2xl) var(--space-3xl);
+  box-shadow: 0 20px 45px rgba(21, 33, 25, 0.08);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(230, 57, 70, 0.25) 0%, rgba(21, 33, 25, 0.8) 100%); /* Crimson organic fluid gradient overlay */
+  z-index: 1;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  color: var(--color-white);
+}
+
+.heroLogoWrapper {
+  background: rgba(255, 255, 255, 0.15);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-white);
+}
+
+.heroLogoIcon {
+  animation: spin 30s linear infinite;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 800;
+  color: var(--color-white);
+  margin: 0;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+
+/* Breadcrumb Floating Capsule */
+.breadcrumbCapsule {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(21, 33, 25, 0.05);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.breadcrumbItem {
+  color: var(--color-text-light);
+}
+
+.breadcrumbDivider {
+  color: rgba(21, 33, 25, 0.25);
+}
+
+.active {
+  color: var(--color-dark);
+  font-weight: 700;
+}
+
+/* Main Section Split Grid */
+.mainSection {
+  padding: var(--space-4xl) 0 var(--space-2xl) 0;
+}
+
+.splitGrid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: var(--space-4xl);
+  align-items: start;
+}
+
+.textCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.badgeTag {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--color-sage); /* Premium light-green lowercase capsule tag */
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  margin-bottom: var(--space-md);
+}
+
+.mainTitle {
+  font-family: var(--font-heading);
+  font-size: clamp(2rem, 4vw, 2.9rem);
+  font-weight: 800;
+  color: var(--color-dark);
+  line-height: 1.15;
+  letter-spacing: -1.5px;
+  margin: 0 0 var(--space-lg) 0;
+}
+
+.description {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-light);
+  margin: 0 0 var(--space-2xl) 0;
+  max-width: 600px;
+}
+
+/* 2x2 Coordinates Grid */
+.coordinatesGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl) var(--space-2xl);
+  width: 100%;
+}
+
+.coordCell {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.coordLabel {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--color-dark);
+  margin: 0 0 2px 0;
+}
+
+.coordValue {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  text-decoration: none;
+  line-height: 1.5;
+  transition: color var(--transition-fast);
+}
+
+a.coordValue:hover {
+  color: var(--color-sage);
+}
+
+.socialRow {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.socialBtn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.socialBtn:hover {
+  background-color: var(--color-sage);
+  transform: translateY(-2px);
+}
+
+.formCol {
+  width: 100%;
+}
+
+/* greyscale Map Section */
+.mapSection {
+  padding-bottom: var(--space-xl);
+}
+
+.mapContainer {
+  width: 100%;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(21, 33, 25, 0.05);
+  border: 1px solid rgba(21, 33, 25, 0.05);
+}
+
+.mapContainer iframe {
+  display: block;
+  filter: grayscale(1) invert(0.06); /* greyscale map visual matching the mockup exactly */
+  -webkit-filter: grayscale(1) invert(0.06);
+}
+
+/* Animations */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tablet & Mobile Responsiveness */
+@media (max-width: 992px) {
+  .page {
+    padding: calc(80px + var(--space-md)) 0 var(--space-3xl) 0;
+  }
+  
+  .heroBanner {
+    aspect-ratio: 16/9;
+    padding: var(--space-xl) var(--space-2xl);
+  }
+  
+  .splitGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+  }
+  
+  .coordinatesGrid {
+    grid-template-columns: 1fr;
+    gap: var(--space-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .heroBanner {
+    min-height: 200px;
+    padding: var(--space-lg);
+  }
+  
+  .breadcrumbCapsule {
+    bottom: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    font-size: 0.75rem;
+  }
+}
