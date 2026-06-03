@@ -96,12 +96,11 @@
 .navControls {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: var(--space-4xl);
   width: 100%;
-  max-width: 500px;
-  border-top: 1px solid rgba(21, 33, 25, 0.1);
-  padding-top: var(--space-lg);
-  margin-top: var(--space-md);
+  padding-top: var(--space-xl);
+  margin-top: var(--space-xl);
 }
 
 .numDots {

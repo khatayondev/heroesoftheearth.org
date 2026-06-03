@@ -183,32 +183,7 @@ export default function ProgramsEvents() {
               </button>
             </div>
 
-            {/* Premium Navigation Controls */}
-            <div className={styles.navControls}>
-              {/* Numbered Dots */}
-              <div className={styles.numDots}>
-                {programs.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleNav(idx)}
-                    className={`${styles.dotBtn} ${idx === activeIndex ? styles.dotActive : ''}`}
-                  >
-                    <span className={styles.dotNum}>0{idx + 1}</span>
-                    <span className={styles.dotLine} />
-                  </button>
-                ))}
-              </div>
 
-              {/* Arrow Triggers */}
-              <div className={styles.arrowTriggers}>
-                <button onClick={handlePrev} className={styles.arrowBtn} aria-label="Previous Program">
-                  <ArrowLeft size={20} />
-                </button>
-                <button onClick={handleNext} className={styles.arrowBtn} aria-label="Next Program">
-                  <ArrowRight size={20} />
-                </button>
-              </div>
-            </div>
           </div>
 
           {/* Right Column: Dynamic Card Carousel */}
@@ -250,6 +225,33 @@ export default function ProgramsEvents() {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+
+        {/* Premium Navigation Controls */}
+        <div className={styles.navControls}>
+          {/* Numbered Dots */}
+          <div className={styles.numDots}>
+            {programs.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => handleNav(idx)}
+                className={`${styles.dotBtn} ${idx === activeIndex ? styles.dotActive : ''}`}
+              >
+                <span className={styles.dotNum}>0{idx + 1}</span>
+                <span className={styles.dotLine} />
+              </button>
+            ))}
+          </div>
+
+          {/* Arrow Triggers */}
+          <div className={styles.arrowTriggers}>
+            <button onClick={handlePrev} className={styles.arrowBtn} aria-label="Previous Program">
+              <ArrowLeft size={20} />
+            </button>
+            <button onClick={handleNext} className={styles.arrowBtn} aria-label="Next Program">
+              <ArrowRight size={20} />
+            </button>
           </div>
         </div>
       </div>
