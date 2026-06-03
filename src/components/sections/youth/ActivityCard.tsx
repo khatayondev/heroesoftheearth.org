@@ -50,12 +50,6 @@ export default function ActivityCard({ activity }: ActivityCardProps) {
             <Clock size={14} className={styles.metaIcon} />
             <span>{activity.duration}</span>
           </div>
-          <div className={styles.metaItem}>
-            <Trophy size={14} className={styles.metaIcon} />
-            <span className={`${styles.badge} ${getDifficultyClass()}`}>
-              {activity.difficulty}
-            </span>
-          </div>
         </div>
       </div>
     </div>

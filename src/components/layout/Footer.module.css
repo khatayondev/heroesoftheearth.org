@@ -1,6 +1,6 @@
 .footer {
   position: relative;
-  background: linear-gradient(180deg, var(--color-ocean-deep) 0%, var(--color-dark) 100%);
+  background: var(--color-ocean-deep);
   color: var(--color-white);
   padding: 0;
   margin-top: var(--space-4xl);
@@ -52,9 +52,7 @@
   font-family: var(--font-heading);
   font-size: 1.8rem;
   font-weight: 800;
-  background: linear-gradient(135deg, var(--color-white), var(--color-sand));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--color-white);
 }
 
 .tagline {

@@ -155,12 +155,7 @@ export default function SchoolsPage() {
 
   return (
     <div ref={containerRef} className={styles.page}>
-      {/* Premium Minimalist Hero */}
       <section className={styles.hero}>
-        <div ref={badgeRef} className={styles.badge}>
-          <span className={styles.badgeHighlight}>Curriculum</span>
-          <span>100% Free Resources</span>
-        </div>
 
         <h1 ref={heroTitleRef} className={styles.heroTitle}>
           Bring <span className={styles.titleHighlight}>Environmental Education</span> to Your Classroom
@@ -270,7 +265,7 @@ export default function SchoolsPage() {
 
                 {/* Alternating Visual Block */}
                 {w.isOdd && (
-                  <div className={styles.workshopVisual} style={{ background: 'linear-gradient(135deg, var(--color-sand) 0%, rgba(44, 90, 71, 0.15) 100%)', border: '1px solid var(--color-sand-dark)' }}>
+                  <div className={styles.workshopVisual} style={{ background: 'var(--color-sand)', border: '1px solid var(--color-sand-dark)' }}>
                     {w.visual}
                   </div>
                 )}

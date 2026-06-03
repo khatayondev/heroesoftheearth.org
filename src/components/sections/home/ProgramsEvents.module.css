@@ -220,7 +220,7 @@
 .cardOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(15, 23, 20, 0.1) 0%, rgba(15, 23, 20, 0.85) 100%);
+  background: rgba(15, 23, 20, 0.5);
   z-index: 1;
 }
 

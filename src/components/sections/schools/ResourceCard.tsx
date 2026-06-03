@@ -51,9 +51,7 @@ export default function ResourceCard({ resource, className = '' }: ResourceCardP
         <div className={styles.iconWrapper}>
           {renderIcon()}
         </div>
-        <span className={`${styles.badge} ${style}`}>
-          {label}
-        </span>
+
         <h3 className={styles.title}>{resource.title}</h3>
         <p className={styles.desc}>{resource.description}</p>
       </div>

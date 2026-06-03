@@ -1,5 +1,5 @@
 .section {
-  background: linear-gradient(135deg, var(--color-sage) 0%, var(--color-sage-light) 100%);
+  background: var(--color-sage);
   color: var(--color-white);
   padding: var(--space-4xl) 0;
   position: relative;

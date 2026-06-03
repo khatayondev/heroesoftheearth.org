@@ -6,9 +6,7 @@
   width: 92%;
   max-width: 1120px;
   z-index: 1000;
-  background: rgba(249, 246, 240, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background: #ffffff;
   border: 1px solid rgba(26, 36, 33, 0.08);
   border-radius: var(--radius-full);
   padding: 0.6rem 1.8rem;
@@ -18,7 +16,7 @@
 
 .scrolled {
   top: 0.8rem;
-  background: rgba(249, 246, 240, 0.92);
+  background: #ffffff;
   border-color: rgba(44, 90, 71, 0.15);
   box-shadow: var(--shadow-md);
   padding: 0.5rem 1.8rem;
@@ -63,12 +61,7 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
-  background: rgba(26, 36, 33, 0.04);
-  padding: 0.25rem;
-  border-radius: var(--radius-full);
-  border: 1px solid rgba(26, 36, 33, 0.06);
-  backdrop-filter: blur(4px);
+  gap: 0.5rem;
 }
 
 .link {

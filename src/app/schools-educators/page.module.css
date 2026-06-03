@@ -315,7 +315,7 @@
 }
 
 .workshopVisual {
-  background: linear-gradient(135deg, var(--color-sand) 0%, rgba(44, 90, 71, 0.1) 100%);
+  background: var(--color-sand);
   border: 1px solid var(--color-sand-dark);
   border-radius: var(--radius-xl);
   padding: var(--space-3xl);
@@ -368,7 +368,7 @@
 
 /* Call to action */
 .cta {
-  background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-sage) 100%);
+  background: var(--color-dark);
   color: var(--color-white);
   border-radius: var(--radius-xl);
   padding: var(--space-3xl);

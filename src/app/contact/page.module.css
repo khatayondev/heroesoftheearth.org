@@ -30,7 +30,7 @@
 .heroOverlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(230, 57, 70, 0.25) 0%, rgba(21, 33, 25, 0.8) 100%); /* Crimson organic fluid gradient overlay */
+  background: rgba(21, 33, 25, 0.6); /* Crimson organic fluid solid overlay */
   z-index: 1;
 }
 

@@ -1,0 +1,210 @@
+.rural-impact-section {
+    padding: 80px 0;
+    background-color: var(--color-ocean);
+}
+
+.rural-impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* Base Card Styling */
+.impact-card {
+    border-radius: 24px;
+    padding: 32px 24px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 450px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.impact-card:hover {
+    transform: translateY(-8px);
+}
+
+.impact-card.white-card {
+    background-color: #ffffff;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.impact-card.white-card:hover {
+    background-color: var(--color-sand);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* The Vibrant Center Card */
+.impact-card.vibrant-card {
+    background-color: var(--color-sand);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Badges */
+.card-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    align-self: flex-start;
+}
+
+.white-card .card-badge {
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #555;
+}
+
+.vibrant-card .card-badge {
+    position: absolute;
+    bottom: 135px;
+    left: 24px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    color: #000;
+    z-index: 2;
+}
+
+/* Arrow Button */
+.card-arrow {
+    position: absolute;
+    top: 32px;
+    right: 24px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.white-card .card-arrow {
+    background-color: #f5f5f5;
+    color: #000;
+}
+
+.white-card:hover .card-arrow {
+    background-color: #ffffff;
+    transform: translate(4px, -4px);
+}
+
+.vibrant-card .card-arrow {
+    background-color: #ffffff;
+    color: #000;
+    bottom: 32px;
+    top: auto;
+    right: 24px;
+    z-index: 2;
+}
+
+.vibrant-card:hover .card-arrow {
+    transform: translate(4px, -4px);
+}
+
+/* Typography */
+.white-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #111;
+    margin-bottom: auto;
+    max-width: 90%;
+    z-index: 2;
+}
+
+.vibrant-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #000;
+    padding: 0 24px 32px 24px;
+    margin: 0;
+    z-index: 2;
+    max-width: 85%;
+}
+
+/* Card Images */
+.card-img-container {
+    width: 100%;
+    height: 200px;
+    margin-top: 40px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.white-card:hover .card-img-container img {
+    transform: scale(1.05);
+}
+
+/* Complex Abstract Cutout Image for Card 2 */
+.abstract-img-container {
+    position: absolute;
+    top: -25%;
+    right: -25%;
+    left: auto;
+    width: 110%;
+    height: 92%;
+}
+
+.abstract-cutout-img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    object-fit: cover;
+    clip-path: polygon(
+      50% 25%, 
+      70% 10%, 90% 35%, 
+      70% 45%, 
+      95% 65%, 75% 90%, 
+      60% 70%, 
+      60% 100%, 40% 100%, 
+      40% 70%, 
+      25% 90%, 5% 65%, 
+      30% 45%, 
+      10% 35%, 30% 10%
+    );
+    -webkit-clip-path: polygon(
+      50% 25%, 
+      70% 10%, 90% 35%, 
+      70% 45%, 
+      95% 65%, 75% 90%, 
+      60% 70%, 
+      60% 100%, 40% 100%, 
+      40% 70%, 
+      25% 90%, 5% 65%, 
+      30% 45%, 
+      10% 35%, 30% 10%
+    );
+    transition: transform 0.8s ease;
+}
+
+.vibrant-card:hover .abstract-cutout-img {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 992px) {
+    .rural-impact-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+}

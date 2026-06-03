@@ -47,7 +47,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(26, 36, 33, 0.02) 0%, rgba(26, 36, 33, 0.15) 100%);
+  background: rgba(26, 36, 33, 0.08);
   z-index: 2;
   pointer-events: none;
 }
@@ -136,7 +136,12 @@
 .cardWideGreen {
   grid-column: span 2;
   background-color: var(--color-sage);
-  color: var(--color-sand);
+  color: var(--color-white);
+}
+
+.cardWideGreen h3,
+.cardWideGreen p {
+  color: var(--color-white);
 }
 
 .cardSquareSand {
@@ -174,8 +179,8 @@
 }
 
 .tagSand {
-  background: rgba(250, 247, 242, 0.15);
-  color: var(--color-sand);
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--color-white);
 }
 
 .tagSage {
@@ -235,7 +240,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to top, rgba(26, 36, 33, 0.9) 0%, rgba(26, 36, 33, 0.4) 65%, rgba(26, 36, 33, 0.1) 100%);
+  background: rgba(26, 36, 33, 0.5);
   z-index: 2;
 }
 

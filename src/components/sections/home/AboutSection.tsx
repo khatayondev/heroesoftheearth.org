@@ -94,10 +94,7 @@ export default function AboutSection() {
 
           {/* Right Column: Copywriting & Modal Trigger */}
           <div ref={textColRef} className={styles.textCol}>
-            <div className={styles.badge}>
-              <span className={styles.badgeHighlight}>Who We Are</span>
-              <span>Our Core Mission</span>
-            </div>
+
 
             <h2 className={styles.title}>About Us</h2>
 
@@ -124,7 +121,7 @@ export default function AboutSection() {
           {/* Card 1: Wide Green (Multilingual Storytelling) */}
           <div className={`${styles.card} ${styles.cardWideGreen}`}>
             <div>
-              <span className={`${styles.cardTag} ${styles.tagSand}`}>Cree & Indigenous Storytelling</span>
+
               <h3 className={styles.cardTitle}>Multilingual & Culturally Respectful Resources</h3>
               <p className={styles.cardDesc}>
                 Environmental stewardship is a shared human history. We translate our resources into French and Indigenous languages (such as Cree and Anishinaabemowin) to celebrate diversity, bridge traditional ecological wisdom with modern climate science, and honor the original caretakers of our ecosystems.
@@ -139,7 +136,7 @@ export default function AboutSection() {
                 variant="outline" 
                 size="sm" 
                 onClick={() => setIsModalOpen(true)}
-                style={{ borderColor: 'var(--color-sand)', color: 'var(--color-sand)' }}
+                style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
               >
                 Learn More
               </Button>
@@ -149,7 +146,7 @@ export default function AboutSection() {
           {/* Card 2: Square Sand (Our Mission Focus) */}
           <div className={`${styles.card} ${styles.cardSquareSand}`}>
             <div>
-              <span className={`${styles.cardTag} ${styles.tagSage}`}>Our Core Mission</span>
+
               <h3 className={styles.cardTitle}>Storytelling & Action</h3>
               <p className={styles.cardDesc}>
                 We combine illustrated storytelling, immersive education, and local student-led cleanups to address ocean conservation and climate resilience.
@@ -166,7 +163,7 @@ export default function AboutSection() {
           {/* Card 3: Square Coral (Real Impact) */}
           <div className={`${styles.card} ${styles.cardSquareCoral}`}>
             <div>
-              <span className={`${styles.cardTag} ${styles.tagCoral}`}>Active Impact</span>
+
               <h3 className={styles.cardTitle}>Real Change, Real Results</h3>
               <p className={styles.cardDesc}>
                 We empower youth to take tangible actions like restoring coastlines and setting up school plastic recycling hubs.
@@ -191,13 +188,8 @@ export default function AboutSection() {
             />
             <div className={styles.bentoImageOverlay}></div>
             <div className={styles.cardImageContent}>
-              <span className={`${styles.cardTag} ${styles.tagCoral}`} style={{ width: 'fit-content' }}>
-                Join the Movement
-              </span>
-              <h3 className={styles.cardTitle}>Equipping Young Leaders to Safeguard our Future</h3>
-              <p className={styles.cardDesc} style={{ maxWidth: '600px', marginBottom: 0 }}>
-                Our youth engagement programs empower kids to step up as clean-earth advocates, translating classroom storytelling into real-world local initiatives.
-              </p>
+
+
             </div>
           </div>
         </div>

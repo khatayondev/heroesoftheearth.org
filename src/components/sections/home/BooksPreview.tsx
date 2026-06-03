@@ -84,25 +84,9 @@ export default function BooksPreview() {
                   {/* Info Column */}
                   <div className={styles.infoCol}>
                     <div>
-                      <div className={styles.bookMeta}>
-                        <h3 className={styles.bookTitle}>{book.title}</h3>
-                        <span 
-                           className={`${styles.priceBadge} ${isComing ? styles.priceComingSoon : ''}`}
-                        >
-                          {book.price}
-                        </span>
-                      </div>
+                      <h3 className={styles.bookTitle}>{book.title}</h3>
                       <div className={styles.bookSubtitle}>{book.subtitle}</div>
                       
-                      {/* Language badges */}
-                      <div className={styles.languages}>
-                        {(book as any).languages?.map((lang: string) => (
-                          <span key={lang} className={styles.langBadge}>
-                            {lang}
-                          </span>
-                        ))}
-                      </div>
-
                       <p className={styles.bookDesc}>{book.description}</p>
                     </div>
 
