@@ -64,15 +64,9 @@ export default function HeroSection() {
           <div ref={ctasRef} className={styles.ctas}>
             <Button 
               href="/contact" 
-              className={styles.mockupBtnWhite}
-            >
-              Partner with Us
-            </Button>
-            <Button 
-              href="/contact" 
               className={styles.mockupBtnLime}
             >
-              Talk to us
+              Partner with Us
             </Button>
           </div>
         </div>
