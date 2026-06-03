@@ -1,115 +1,7 @@
 .booksPage {
   min-height: 100vh;
   background-color: var(--color-sand);
-}
-
-/* Hero Section */
-.heroSection {
-  display: flex;
-  min-height: 90vh;
-  background-color: var(--color-white);
-  padding-top: 80px; /* offset for nav */
-}
-
-.heroLeft {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem;
-}
-
-.heroContent {
-  max-width: 500px;
-}
-
-.accentLine {
-  width: 60px;
-  height: 4px;
-  background-color: var(--color-lime, #c9eb6e); /* fallback if not defined */
-  margin-bottom: 1.5rem;
-}
-
-.title {
-  font-family: var(--font-heading);
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  color: var(--color-dark);
-  margin-bottom: 1.5rem;
-}
-
-.subtitle {
-  font-family: var(--font-body);
-  font-size: 1.125rem;
-  color: var(--color-text-light);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-}
-
-.heroActions {
-  display: flex;
-  gap: 1rem;
-}
-
-.heroRight {
-  flex: 1;
-  position: relative;
-  background-color: #f0f0f0;
-}
-
-.heroImage {
-  object-fit: cover;
-}
-
-/* Stats Section */
-.statsSection {
-  background-color: var(--color-sand);
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-.statsContainer {
-  display: flex;
-  gap: 4rem;
-  max-width: 1200px;
-  width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.statItem {
-  text-align: center;
-}
-
-.statNum {
-  font-family: var(--font-heading);
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--color-dark);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.statSuffix {
-  color: var(--color-lime, #c9eb6e);
-  font-size: 2.5rem;
-}
-
-.statLabel {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--color-text-light);
-}
-
-/* Catalog Section */
-.catalogSection {
-  padding: 6rem 0;
-  background-color: var(--color-sand);
+  padding: 8rem 0 6rem 0;
 }
 
 .container {
@@ -118,6 +10,39 @@
   padding: 0 2rem;
 }
 
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.accentLine {
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-lime, #c9eb6e);
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 800;
+  color: var(--color-dark);
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  max-width: 650px;
+  line-height: 1.6;
+}
+
+/* Catalog Grid */
 .grid {
   display: flex;
   justify-content: center;
@@ -126,28 +51,8 @@
 }
 
 @media (max-width: 992px) {
-  .heroSection {
-    flex-direction: column;
-    min-height: auto;
-  }
-  
-  .heroLeft {
-    padding: 6rem 2rem 4rem;
-    text-align: center;
-  }
-  
-  .heroContent {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .heroRight {
-    min-height: 50vh;
-  }
-  
-  .statsContainer {
+  .grid {
     gap: 2rem;
   }
 }
+
