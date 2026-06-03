@@ -74,6 +74,7 @@ export default function HeroSection() {
             >
               Talk to us
             </Button>
+          </div>
         </div>
       </div>
 
