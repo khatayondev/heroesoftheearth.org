@@ -26,13 +26,10 @@ export default function BooksPage() {
     <div className={styles.booksPage}>
       {/* Header Section */}
       <section className={styles.headerSection}>
-        <div className={styles.iconWrapper}>
-          <Leaf size={24} color="#fff" />
-        </div>
-        <h1 className={styles.title}>Chapter Designs</h1>
+        <span className={styles.pretitle}>Educational Literature</span>
+        <h1 className={styles.title}>Discover Our Exciting Books</h1>
         <p className={styles.subtitle}>
-          These Chapter models designed based on layout and templates if you can understand them fast. 
-          You can set elements for your specific projects. So please go through and check.
+          Showcase educational books and resources that teach children about oceans, climate, and sustainability.
         </p>
       </section>
 

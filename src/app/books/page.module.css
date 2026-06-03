@@ -13,20 +13,19 @@
   background-color: #FFFFFF;
 }
 
-.iconWrapper {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #55B48D;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
+.pretitle {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-sage);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 0.75rem;
 }
 
 .title {
   font-family: var(--font-heading);
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   font-weight: 700;
   color: #111111;
   margin-bottom: 1rem;
@@ -34,7 +33,7 @@
 
 .subtitle {
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666666;
   max-width: 650px;
   line-height: 1.6;
@@ -51,9 +50,10 @@
 }
 
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 992px) {
