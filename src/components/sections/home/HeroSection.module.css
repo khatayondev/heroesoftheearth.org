@@ -58,58 +58,59 @@
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 var(--space-lg);
-  display: grid;
-  grid-template-columns: 1.3fr 0.7fr;
-  gap: var(--space-3xl);
-  align-items: center;
-}
-
-.leftCol {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: var(--space-xl);
 }
 
-.badgeLabel {
-  font-family: var(--font-body);
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--color-sand);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  background: rgba(254, 254, 254, 0.08);
-  border: 1px solid rgba(254, 254, 254, 0.15);
-  padding: 0.35rem 0.9rem;
-  border-radius: var(--radius-full);
-  margin-bottom: var(--space-md);
-  backdrop-filter: blur(4px);
+.centerCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
 }
 
 .headline {
   font-family: var(--font-heading);
-  font-size: clamp(2.2rem, 3.8vw, 3.4rem);
+  font-size: clamp(3rem, 5vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.2;
+  line-height: 1.15;
   color: var(--color-white);
   letter-spacing: -0.02em;
   margin-bottom: var(--space-md);
+  max-width: 900px;
 }
 
 .subheadline {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
   font-weight: 400;
   line-height: 1.6;
-  color: rgba(254, 254, 254, 0.75);
+  color: rgba(254, 254, 254, 0.85);
   margin-bottom: var(--space-xl);
-  max-width: 600px;
+  max-width: 750px;
 }
 
 .ctas {
   display: flex;
+  justify-content: center;
   gap: var(--space-md);
   margin-bottom: var(--space-3xl);
+}
+
+/* Background video */
+.backgroundVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 /* Mockup White Pill Button */

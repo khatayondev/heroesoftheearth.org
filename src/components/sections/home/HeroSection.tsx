@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useRef } from 'react';
-import Image from 'next/image';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import Button from '@/components/ui/Button';
@@ -14,7 +13,7 @@ export default function HeroSection() {
   const ctasRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    // Fade up left column elements stagger
+    // Fade up center elements stagger
     const tl = gsap.timeline();
     
     tl.fromTo(headlineRef.current,
@@ -37,25 +36,22 @@ export default function HeroSection() {
 
   return (
     <section ref={containerRef} className={styles.hero}>
-      {/* Aerial Deep Teal-Green Ocean Background Image */}
-      <div className={styles.backgroundGraphic}>
-        <Image
-          src="/images/hero-sea-bg.png"
-          alt="Aerial ocean and green coast photograph"
-          fill
-          priority
-          sizes="100vw"
-          style={{ objectFit: 'cover' }}
-        />
-      </div>
+      {/* Underwater Ocean Background Video */}
+      <video 
+        className={styles.backgroundVideo} 
+        autoPlay 
+        muted 
+        loop 
+        playsInline
+      >
+        <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
+      </video>
 
-      {/* Deep vignette overlay to match mockup's high-contrast moody border shading */}
+      {/* Dark overlay for text readability */}
       <div className={styles.heroOverlay}></div>
-      <div className={styles.heroOverlayLeft}></div>
-      <div className={styles.heroOverlayBottom}></div>
 
       <div className={styles.container}>
-        <div className={styles.leftCol}>
+        <div className={styles.centerCol}>
 
           <h1 ref={headlineRef} className={styles.headline}>
             Empowering the next generation to protect our planet through education and storytelling
@@ -80,8 +76,6 @@ export default function HeroSection() {
             </Button>
           </div>
         </div>
-
-
 
         {/* Center Mockup Scroll Indicator */}
         <div className={styles.scrollIndicator}>

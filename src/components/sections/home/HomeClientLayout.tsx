@@ -73,10 +73,10 @@ export default function HomeClientLayout() {
         <AboutSection />
       </div>
       <div className={styles.scrollPanel}>
-        <RuralImpactCards />
+        <BooksPreview />
       </div>
       <div className={styles.scrollPanel}>
-        <BooksPreview />
+        <RuralImpactCards />
       </div>
       <div className={styles.scrollPanel}>
         <GetInvolved />
