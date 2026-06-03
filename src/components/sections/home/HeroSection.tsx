@@ -74,14 +74,13 @@ export default function HeroSection() {
             >
               Talk to us
             </Button>
-          </div>
         </div>
+      </div>
 
-        {/* Center Mockup Scroll Indicator */}
-        <div className={styles.scrollIndicator}>
-          <span>SCROLL</span>
-          <div className={styles.scrollLine}></div>
-        </div>
+      {/* Center Mockup Scroll Indicator */}
+      <div className={styles.scrollIndicator}>
+        <span>SCROLL</span>
+        <div className={styles.scrollLine}></div>
       </div>
     </section>
   );
