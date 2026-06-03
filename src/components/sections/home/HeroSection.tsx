@@ -36,16 +36,15 @@ export default function HeroSection() {
 
   return (
     <section ref={containerRef} className={styles.hero}>
-      {/* Underwater Ocean Background Video */}
-      <video 
-        className={styles.backgroundVideo} 
-        autoPlay 
-        muted 
-        loop 
-        playsInline
-      >
-        <source src="https://videos.pexels.com/video-files/853889/853889-hd_1920_1080_25fps.mp4" type="video/mp4" />
-      </video>
+      {/* YouTube Background Video */}
+      <div className={styles.videoWrapper}>
+        <iframe 
+          className={styles.backgroundVideo}
+          src="https://www.youtube.com/embed/aoLh_zTZ-qY?autoplay=1&mute=1&loop=1&playlist=aoLh_zTZ-qY&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3"
+          title="Heroes of the Earth Video"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        ></iframe>
+      </div>
 
       {/* Dark overlay for text readability */}
       <div className={styles.heroOverlay}></div>

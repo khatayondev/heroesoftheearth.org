@@ -102,15 +102,42 @@
   margin-bottom: var(--space-3xl);
 }
 
-/* Background video */
-.backgroundVideo {
+/* Background video wrapper (YouTube) */
+.videoWrapper {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  overflow: hidden;
   z-index: 0;
+  pointer-events: none;
+}
+
+.backgroundVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  border: none;
+  pointer-events: none;
+}
+
+/* Maintain aspect ratio to cover entire screen without black bars */
+@media (min-aspect-ratio: 16/9) {
+  .backgroundVideo {
+    height: 56.25vw;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .backgroundVideo {
+    width: 177.78vh;
+  }
 }
 
 /* Mockup White Pill Button */
