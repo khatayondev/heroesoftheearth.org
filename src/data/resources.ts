@@ -9,28 +9,28 @@ export interface Resource {
 
 export const teachingResources: Resource[] = [
   {
-    id: 'ocean-lesson-plan',
-    title: 'Ocean Ecosystems Lesson Plan (PDF)',
-    description: 'A comprehensive curriculum for grades 3–6 covering coral reefs, food chains, and human impacts on marine biology.',
-    type: 'worksheet', // wait, let's make it worksheet/lesson-plan
+    id: 'lesson-plans',
+    title: 'Lesson Plans (PDF)',
+    description: 'Curriculum-aligned lesson plans for teaching oceans, climate change, and sustainability.',
+    type: 'lesson-plan',
     downloadUrl: '#',
     iconName: 'FileText',
   },
   {
-    id: 'climate-teacher-guide',
-    title: 'Climate Change Teacher Guide (PDF)',
-    description: 'Classroom discussion guides and experiments that explain the greenhouse effect in a hands-on, relatable way.',
+    id: 'worksheets',
+    title: 'Worksheets (PDF)',
+    description: 'Interactive worksheets and activities in multiple languages, including French and Indigenous languages.',
+    type: 'worksheet',
+    downloadUrl: '#',
+    iconName: 'CheckSquare',
+  },
+  {
+    id: 'teacher-guides',
+    title: 'Teacher Guides (PDF)',
+    description: 'Comprehensive guides to help educators deliver inclusive and engaging environmental lessons.',
     type: 'guide',
     downloadUrl: '#',
     iconName: 'BookOpen',
-  },
-  {
-    id: 'eco-story-discussion',
-    title: 'Storytelling Discussion Kit (PDF)',
-    description: 'Companion resource for our books with reading prompts, vocabulary exercises, and group storytelling guides.',
-    type: 'guide',
-    downloadUrl: '#',
-    iconName: 'HelpCircle',
   },
 ];
 
@@ -38,7 +38,7 @@ export const freeDownloads: Resource[] = [
   {
     id: 'plastic-free-worksheet',
     title: 'Plastic-Free Challenge Worksheet (PDF)',
-    description: 'A fun tracker for students to log plastic reduction activities at home and in school for one week.',
+    description: 'Instantly downloadable tracker for students to log plastic reduction activities.',
     type: 'worksheet',
     downloadUrl: '#',
     iconName: 'CheckSquare',
@@ -46,7 +46,7 @@ export const freeDownloads: Resource[] = [
   {
     id: 'ocean-pollution-activity',
     title: 'Ocean Pollution Activity Sheet (PDF)',
-    description: 'Coloring, puzzles, and quizzes that help children understand marine conservation basics in multiple languages.',
+    description: 'Instantly downloadable activity sheet to understand marine conservation.',
     type: 'worksheet',
     downloadUrl: '#',
     iconName: 'Palette',
@@ -54,7 +54,7 @@ export const freeDownloads: Resource[] = [
   {
     id: 'climate-basics-guide',
     title: 'Climate Basics Guide (PDF)',
-    description: 'An illustrated 5-page PDF guide summarizing key climate concepts and simple steps families can take.',
+    description: 'Instantly downloadable guide summarizing key climate concepts.',
     type: 'guide',
     downloadUrl: '#',
     iconName: 'Download',
@@ -62,7 +62,7 @@ export const freeDownloads: Resource[] = [
   {
     id: 'classroom-poster',
     title: 'Hero of the Earth Classroom Poster (PDF)',
-    description: 'A beautiful printable poster listing eco-friendly habits and indigenous words for nature.',
+    description: 'Instantly downloadable classroom poster for environmental education.',
     type: 'poster',
     downloadUrl: '#',
     iconName: 'Image',
@@ -70,7 +70,7 @@ export const freeDownloads: Resource[] = [
   {
     id: 'env-quiz-pack',
     title: 'Environmental Quiz Pack (PDF)',
-    description: 'A series of short trivia quizzes about biodiversity, ocean currents, and global sustainability.',
+    description: 'Instantly downloadable trivia quizzes about global sustainability.',
     type: 'quiz',
     downloadUrl: '#',
     iconName: 'Award',

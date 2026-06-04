@@ -155,51 +155,48 @@ export default function SchoolsPage() {
 
   return (
     <div ref={containerRef} className={styles.page}>
-      <section className={styles.hero}>
-
-        <h1 ref={heroTitleRef} className={styles.heroTitle}>
-          Bring <span className={styles.titleHighlight}>Environmental Education</span> to Your Classroom
-        </h1>
-
-        <p ref={heroSubRef} className={styles.heroSub}>
-          We provide curriculum-aligned tools to help teachers deliver engaging lessons on oceans, climate change, and sustainability through storytelling, interactive activities, and inclusive learning resources in multiple languages, including French and Indigenous languages, to support accessibility and cultural inclusion.
-        </p>
-
-        <div ref={btnGroupRef} className={styles.btnGroup}>
-          <Button 
-            variant="primary" 
-            size="md" 
-            href="#resources"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector(`.${styles.firstSection}`)?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Explore Resources
-          </Button>
-          <Button 
-            variant="outline" 
-            size="md" 
-            href="/contact"
-          >
-            Request Workshop
-          </Button>
-        </div>
-
-        {/* Floating Mockup Showcase */}
-        <div ref={floatingRef} className={styles.floatingContainer}>
-          <div className={styles.floatingCard}>
-            <div className={styles.floatingCardImage}>
-              <Image 
-                src="/images/schools-hero.png"
-                alt="Classroom Education Showcase"
-                fill
-                sizes="(max-width: 992px) 100vw, 850px"
-                style={{ objectFit: 'cover' }}
-                priority
-              />
+      <section className={styles.heroSection}>
+        <div className={styles.heroLeft}>
+          <div className={styles.heroContent}>
+            <div className={styles.accentLine}></div>
+            <h1 ref={heroTitleRef} className={styles.title}>
+              Bring Environmental Education to Your Classroom
+            </h1>
+            <p ref={heroSubRef} className={styles.subtitle}>
+              We provide curriculum-aligned tools to help teachers deliver engaging lessons on oceans, climate change, and sustainability through storytelling, interactive activities, and inclusive learning resources in multiple languages, including French and Indigenous languages, to support accessibility and cultural inclusion.
+            </p>
+            <div ref={btnGroupRef} className={styles.heroActions}>
+              <Button 
+                variant="primary" 
+                size="md" 
+                href="#resources"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(`.${styles.firstSection}`)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Explore Resources
+              </Button>
+              <Button 
+                variant="outline" 
+                size="md" 
+                href="/contact"
+              >
+                Request Workshop
+              </Button>
             </div>
           </div>
+        </div>
+
+        <div className={styles.heroRight}>
+          <Image 
+            src="/images/schools-hero.png"
+            alt="Classroom Education Showcase"
+            fill
+            sizes="(max-width: 992px) 100vw, 50vw"
+            className={styles.heroImage}
+            priority
+          />
         </div>
       </section>
 

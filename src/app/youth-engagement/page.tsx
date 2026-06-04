@@ -176,60 +176,53 @@ export default function YouthEngagementPage() {
 
   return (
     <div ref={containerRef} className={styles.page}>
-      {/* Premium Minimalist Hero */}
-      <section className={styles.hero}>
-        <div ref={badgeRef} className={styles.badge}>
-          <span className={styles.badgeHighlight}>Action Deck</span>
-          <span>Join the Movement</span>
-        </div>
-
-        <h1 ref={heroTitleRef} className={styles.heroTitle}>
-          Become a <span className={styles.titleHighlight}>Hero of the Earth</span>
-        </h1>
-
-        <p ref={heroSubRef} className={styles.heroSub}>
-          We empower young people to take action through fun, interactive environmental challenges.
-        </p>
-
-        <div ref={btnGroupRef} className={styles.btnGroup}>
-          <Button 
-            variant="primary" 
-            size="md" 
-            href="#challenges"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector(`.${styles.firstSection}`)?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Start Challenges
-          </Button>
-          <Button 
-            variant="outline" 
-            size="md" 
-            href="#newsletter"
-            onClick={(e) => {
-              e.preventDefault();
-              document.querySelector(`.${styles.signupCard}`)?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Join Movement
-          </Button>
-        </div>
-
-        {/* Floating Mockup Showcase */}
-        <div ref={floatingRef} className={styles.floatingContainer}>
-          <div className={styles.floatingCard}>
-            <div className={styles.floatingCardImage}>
-              <Image 
-                src="/images/youth-hero.png"
-                alt="Youth environmental leaders showcase"
-                fill
-                sizes="(max-width: 992px) 100vw, 850px"
-                style={{ objectFit: 'cover' }}
-                priority
-              />
+      {/* Split Screen Hero */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroLeft}>
+          <div className={styles.heroContent}>
+            <div className={styles.accentLine}></div>
+            <h1 ref={heroTitleRef} className={styles.title}>
+              Become a Hero of the Earth
+            </h1>
+            <p ref={heroSubRef} className={styles.subtitle}>
+              We empower young people to take action through fun, interactive environmental challenges.
+            </p>
+            <div ref={btnGroupRef} className={styles.heroActions}>
+              <Button 
+                variant="primary" 
+                size="md" 
+                href="#challenges"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(`.${styles.firstSection}`)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Start Challenges
+              </Button>
+              <Button 
+                variant="outline" 
+                size="md" 
+                href="#newsletter"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector(`.${styles.signupCard}`)?.scrollIntoView({ behavior: 'smooth' });
+                }}
+              >
+                Join Movement
+              </Button>
             </div>
           </div>
+        </div>
+
+        <div className={styles.heroRight}>
+          <Image 
+            src="/images/youth-hero.png"
+            alt="Youth environmental leaders showcase"
+            fill
+            sizes="(max-width: 992px) 100vw, 50vw"
+            className={styles.heroImage}
+            priority
+          />
         </div>
       </section>
 
