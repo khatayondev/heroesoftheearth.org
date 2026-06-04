@@ -56,14 +56,8 @@ export default function BooksPage() {
             {/* Left: Cover Image */}
             <div className={styles.coverColumn}>
               <div className={styles.coverBg}>
-                <div className={styles.coverImageWrapper}>
-                  <Image
-                    src={book.coverImage}
-                    alt={book.title}
-                    width={280}
-                    height={380}
-                    className={styles.coverImage}
-                  />
+                <div className={styles.coverMockup}>
+                  <div className={styles.mockupSpine}></div>
                 </div>
               </div>
               <p className={styles.coverHint}>CLICK FOR PREVIEW</p>
@@ -128,13 +122,7 @@ export default function BooksPage() {
                   className={`${styles.sidebarThumb} ${thumbIndex === index ? styles.sidebarThumbActive : ''}`}
                   onClick={() => scrollToBook(thumbIndex)}
                 >
-                  <Image
-                    src={thumbBook.coverImage}
-                    alt={thumbBook.title}
-                    width={70}
-                    height={95}
-                    className={styles.thumbImage}
-                  />
+                  <div className={styles.thumbMockup}></div>
                 </button>
               ))}
             </div>
