@@ -6,6 +6,18 @@
   margin-top: var(--space-4xl);
 }
 
+/* White background behind the wave area to match the section above */
+.footer::before {
+  content: '';
+  position: absolute;
+  top: calc(-60px - var(--space-4xl));
+  left: 0;
+  width: 100%;
+  height: calc(60px + var(--space-4xl));
+  background: var(--color-white);
+  z-index: 0;
+}
+
 .waveContainer {
   position: absolute;
   top: -60px;
