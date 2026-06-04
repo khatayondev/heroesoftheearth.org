@@ -12,7 +12,7 @@ export const books: Book[] = [
     price: '$14.99',
     coverImage: '/images/book-waves-of-change.png',
     purchaseLink: '#',
-    sampleLink: '#',
+    sampleLink: '/files/waves-of-change-sample.pdf',
     languages: ['English', 'French'],
   },
   {
@@ -26,7 +26,7 @@ export const books: Book[] = [
     price: 'Coming Soon',
     coverImage: '/images/book-afrika.png',
     comingSoon: true,
-    sampleLink: '#',
+    sampleLink: '/files/afrika-sample.pdf',
     languages: ['English'],
   },
 ];

@@ -270,6 +270,28 @@
   letter-spacing: 0.5px;
 }
 
+.downloadBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.7rem 1.8rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-dark);
+  border: 2px solid var(--color-dark);
+  border-radius: var(--radius-full);
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+}
+
+.downloadBtn:hover {
+  background: var(--color-dark);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
 /* -- Right Sidebar Column -- */
 .sidebarColumn {
   display: flex;

@@ -105,7 +105,13 @@ export default function BooksPage() {
                   <Button href={book.purchaseLink} variant="primary">Buy Book</Button>
                 )}
                 {book.sampleLink && (
-                  <Button href={book.sampleLink} variant="outline">Download Sample (PDF)</Button>
+                  <a 
+                    href={book.sampleLink} 
+                    download 
+                    className={styles.downloadBtn}
+                  >
+                    Download Sample (PDF)
+                  </a>
                 )}
                 {book.comingSoon && (
                   <span className={styles.comingSoonBadge}>Coming Soon</span>
