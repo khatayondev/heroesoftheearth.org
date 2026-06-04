@@ -44,19 +44,20 @@ export default function HomeClientLayout() {
           invalidateOnRefresh: true,
         });
 
-        // Scale down, fade, and shift underlying panel to create a rich 3D perspective depth effect
+        // Scale down, fade out, and shift underlying panel for a depth effect
+        // Fade to 0 so it's fully invisible behind the incoming opaque section
         const nextPanel = panels[i + 1];
         gsap.to(panel, {
           scrollTrigger: {
             trigger: nextPanel,
             start: 'top bottom',
-            end: 'top top',
+            end: 'top 40%',
             scrub: true,
             invalidateOnRefresh: true,
           },
           scale: 0.94,
-          opacity: 0.35,
-          yPercent: -15, // subtle upward parallax shift
+          opacity: 0,
+          yPercent: -8,
           ease: 'none',
         });
       }

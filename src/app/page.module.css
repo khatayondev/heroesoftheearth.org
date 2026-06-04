@@ -11,10 +11,21 @@
     position: relative;
     width: 100%;
     min-height: 100vh;
-    box-shadow: 0 -15px 40px rgba(15, 23, 20, 0.08);
+    box-shadow: 0 -15px 40px rgba(15, 23, 20, 0.12);
     background-color: var(--color-bg);
     overflow: visible;
     will-change: transform, opacity;
+    /* Ensure fully opaque — prevents see-through to pinned section behind */
+    isolation: isolate;
+  }
+
+  /* Solid backdrop to guarantee no bleed-through */
+  .scrollPanel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-bg);
+    z-index: -1;
   }
 }
 
