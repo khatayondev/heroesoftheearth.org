@@ -162,7 +162,7 @@ export default function SchoolsPage() {
             <h1 ref={heroTitleRef} className={styles.title}>
               Bring Environmental Education to Your Classroom
             </h1>
-            <p ref={heroSubRef} className={styles.subtitle}>
+            <p ref={heroSubRef} className={styles.heroSubtitle}>
               We provide curriculum-aligned tools to help teachers deliver engaging lessons on oceans, climate change, and sustainability through storytelling, interactive activities, and inclusive learning resources in multiple languages, including French and Indigenous languages, to support accessibility and cultural inclusion.
             </p>
             <div ref={btnGroupRef} className={styles.heroActions}>

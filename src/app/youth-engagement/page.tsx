@@ -184,7 +184,7 @@ export default function YouthEngagementPage() {
             <h1 ref={heroTitleRef} className={styles.title}>
               Become a Hero of the Earth
             </h1>
-            <p ref={heroSubRef} className={styles.subtitle}>
+            <p ref={heroSubRef} className={styles.heroSubtitle}>
               We empower young people to take action through fun, interactive environmental challenges.
             </p>
             <div ref={btnGroupRef} className={styles.heroActions}>

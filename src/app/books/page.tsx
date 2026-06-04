@@ -21,7 +21,7 @@ export default function BooksPage() {
           <div className={styles.heroContent}>
             <div className={styles.accentLine}></div>
             <h1 className={styles.title}>Discover Our<br/>Exciting Books</h1>
-            <p className={styles.subtitle}>
+            <p className={styles.heroSubtitle}>
               Showcase educational books and resources that teach children about oceans, climate, and sustainability.
             </p>
             <div className={styles.heroActions}>

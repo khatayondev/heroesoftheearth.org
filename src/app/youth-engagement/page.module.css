@@ -40,7 +40,7 @@
   margin-bottom: 1.5rem;
 }
 
-.subtitle {
+.heroSubtitle {
   font-family: var(--font-body);
   font-size: 1.125rem;
   color: var(--color-text-light);
