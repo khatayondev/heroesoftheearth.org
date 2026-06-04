@@ -1,14 +1,14 @@
 .booksPage {
   min-height: 100vh;
-  background-color: var(--color-sand);
+  background-color: var(--color-white);
 }
 
-/* Hero Section */
+/* ===== HERO SECTION (kept) ===== */
 .heroSection {
   display: flex;
   min-height: 90vh;
   background-color: var(--color-white);
-  padding-top: 80px; /* offset for nav */
+  padding-top: 80px;
 }
 
 .heroLeft {
@@ -26,7 +26,7 @@
 .accentLine {
   width: 60px;
   height: 4px;
-  background-color: var(--color-lime, #c9eb6e); /* fallback if not defined */
+  background-color: var(--color-lime, #c9eb6e);
   margin-bottom: 1.5rem;
 }
 
@@ -62,80 +62,247 @@
   object-fit: cover;
 }
 
-/* Stats Section */
-.statsSection {
-  background-color: var(--color-sand);
-  padding: 4rem 2rem;
-  display: flex;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
+/* ===== GESTALTEN BOOK DETAIL SECTION ===== */
+.bookSection {
+  background-color: var(--color-white);
+  padding: 0 2rem 5rem;
+  scroll-margin-top: 80px;
 }
 
-.statsContainer {
-  display: flex;
+.bookSectionBorder {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+}
+
+.bookLayout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr 100px;
   gap: 4rem;
   max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* -- Left Cover Column -- */
+.coverColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.coverBg {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  aspect-ratio: 3 / 4;
+  background: #f0eeea;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
-.statItem {
-  text-align: center;
+/* Subtle circular light behind the book */
+.coverBg::before {
+  content: '';
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  z-index: 0;
 }
 
-.statNum {
+.coverImageWrapper {
+  position: relative;
+  z-index: 1;
+  width: 65%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 8px 24px rgba(0,0,0,0.2));
+}
+
+.coverImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.coverHint {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  margin: 0;
+}
+
+/* -- Center Detail Column -- */
+.detailColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.bookTitle {
   font-family: var(--font-heading);
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 800;
   color: var(--color-dark);
-  line-height: 1;
+  line-height: 1.15;
   margin-bottom: 0.5rem;
 }
 
-.statSuffix {
-  color: var(--color-lime, #c9eb6e);
-  font-size: 2.5rem;
-}
-
-.statLabel {
+.bookAuthor {
   font-family: var(--font-body);
   font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.4);
+  letter-spacing: 1.5px;
+  margin-bottom: 2rem;
+}
+
+.bookAuthor span {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.bookDescription {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--color-dark);
+  font-weight: 500;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.bookFullDescription {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+}
+
+/* Metadata Grid */
+.metaGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-bottom: 2.5rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.metaLabel {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metaValue {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
   color: var(--color-text-light);
 }
 
-/* Catalog Section */
-.catalogSection {
-  padding: 6rem 0;
-  background-color: var(--color-sand);
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-.grid {
+/* Book CTA Buttons */
+.bookActions {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
+  gap: 1rem;
+  align-items: center;
   flex-wrap: wrap;
 }
 
+.comingSoonBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.6rem;
+  background-color: var(--color-sand);
+  color: var(--color-text-light);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.5px;
+}
+
+/* -- Right Sidebar Column -- */
+.sidebarColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.5rem;
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  padding-left: 1.5rem;
+}
+
+.sidebarLabel {
+  font-family: var(--font-body);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.3);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  margin-bottom: 0.5rem;
+}
+
+.sidebarThumb {
+  width: 70px;
+  height: 95px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f5f3ef;
+  padding: 0;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.sidebarThumb:hover {
+  border-color: var(--color-sage-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sidebarThumbActive {
+  border-color: var(--color-dark);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.thumbImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   .heroSection {
     flex-direction: column;
     min-height: auto;
   }
-  
+
   .heroLeft {
     padding: 6rem 2rem 4rem;
     text-align: center;
   }
-  
+
   .heroContent {
     margin: 0 auto;
     display: flex;
@@ -146,8 +313,39 @@
   .heroRight {
     min-height: 50vh;
   }
-  
-  .statsContainer {
-    gap: 2rem;
+
+  .bookLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .sidebarColumn {
+    flex-direction: row;
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-left: 0;
+    padding-top: 1.5rem;
+    justify-content: center;
+  }
+
+  .sidebarLabel {
+    writing-mode: horizontal-tb;
+    margin-bottom: 0;
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .bookSection {
+    padding: 0 1rem 3rem;
+  }
+
+  .metaGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bookActions {
+    flex-direction: column;
+    align-items: stretch;
   }
 }
