@@ -20,11 +20,9 @@ if (typeof window !== 'undefined') {
 export default function YouthEngagementPage() {
   const containerRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const heroSubRef = useRef<HTMLParagraphElement>(null);
   const btnGroupRef = useRef<HTMLDivElement>(null);
-  const floatingRef = useRef<HTMLDivElement>(null);
   const challengesHeaderRef = useRef<HTMLDivElement>(null);
   const challengesGridRef = useRef<HTMLDivElement>(null);
   const toolsHeaderRef = useRef<HTMLDivElement>(null);
@@ -57,17 +55,12 @@ export default function YouthEngagementPage() {
   useGSAP(() => {
     // 1. Hero Reveal Animation
     const heroTl = gsap.timeline();
-    heroTl.to(badgeRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power3.out',
-    }).to(heroTitleRef.current, {
+    heroTl.to(heroTitleRef.current, {
       opacity: 1,
       y: 0,
       duration: 0.7,
       ease: 'power3.out',
-    }, '-=0.4').to(heroSubRef.current, {
+    }).to(heroSubRef.current, {
       opacity: 1,
       y: 0,
       duration: 0.6,
@@ -77,12 +70,7 @@ export default function YouthEngagementPage() {
       y: 0,
       duration: 0.5,
       ease: 'power3.out',
-    }, '-=0.4').to(floatingRef.current, {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: 'power4.out',
-    }, '-=0.35');
+    }, '-=0.4');
 
     // 2. Challenges Staggered 3D Flip-in
     const cards = challengesGridRef.current?.querySelectorAll('.activity-card-trigger');

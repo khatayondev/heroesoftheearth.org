@@ -14,11 +14,9 @@ import styles from './page.module.css';
 
 export default function SchoolsPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const badgeRef = useRef<HTMLDivElement>(null);
   const heroTitleRef = useRef<HTMLHeadingElement>(null);
   const heroSubRef = useRef<HTMLParagraphElement>(null);
   const btnGroupRef = useRef<HTMLDivElement>(null);
-  const floatingRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -28,18 +26,12 @@ export default function SchoolsPage() {
     const tl = gsap.timeline();
 
     // Staggered reveal of hero components in premium style
-    tl.to(badgeRef.current, {
-      y: 0,
-      opacity: 1,
-      duration: 0.6,
-      ease: 'power3.out',
-    })
-      .to(heroTitleRef.current, {
+    tl.to(heroTitleRef.current, {
         y: 0,
         opacity: 1,
         duration: 0.7,
         ease: 'power3.out',
-      }, '-=0.4')
+      })
       .to(heroSubRef.current, {
         y: 0,
         opacity: 1,
@@ -51,13 +43,7 @@ export default function SchoolsPage() {
         opacity: 1,
         duration: 0.5,
         ease: 'power3.out',
-      }, '-=0.4')
-      .to(floatingRef.current, {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: 'power4.out',
-      }, '-=0.35');
+      }, '-=0.4');
 
     // Staggered reveal of teaching resource cards
     gsap.to('.resource-card-trigger', {
