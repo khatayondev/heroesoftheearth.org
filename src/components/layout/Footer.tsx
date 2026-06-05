@@ -40,12 +40,12 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* About Column */}
             <div className={styles.aboutCol}>
-              <TransitionLink href="/" className={styles.brandLink} style={{ display: 'inline-block', marginBottom: 'var(--space-sm)' }}>
+              <TransitionLink href="/" className={styles.brandLink} style={{ display: 'inline-block', marginBottom: 'var(--space-md)', marginLeft: '-8px' }}>
                 <Image 
-                  src="/images/logo.png" 
-                  alt="Heroes of the Earth Logo" 
-                  width={150} 
-                  height={40}
+                  src="/images/footer-logo.png" 
+                  alt="Heroes of the Earth Footer Logo" 
+                  width={240} 
+                  height={64}
                   style={{ objectFit: 'contain' }}
                 />
               </TransitionLink>
