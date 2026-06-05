@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Video, Award, MessageSquare, Flame, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
@@ -30,6 +30,8 @@ export default function ProgramsEvents() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [displayedIndex, setDisplayedIndex] = useState(0);
   const isTransitioning = useRef(false);
+  const isProgrammaticScroll = useRef(false);
+  const scrollTimeoutRef = useRef<any>(null);
 
   const programs: Program[] = [
     {
@@ -97,16 +99,28 @@ export default function ProgramsEvents() {
     });
   }, { scope: containerRef });
 
-  const handleNav = (nextIndex: number) => {
-    if (isTransitioning.current || nextIndex === activeIndex) return;
+  useEffect(() => {
+    return () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+    };
+  }, []);
+
+  const animateTextTransition = (nextIndex: number) => {
+    if (nextIndex === displayedIndex) {
+      isTransitioning.current = false;
+      return;
+    }
+    
     isTransitioning.current = true;
 
-    // Determine direction
-    const isForward = activeIndex === 3 && nextIndex === 0 
+    // Determine direction based on displayedIndex (currently showing text)
+    const isForward = displayedIndex === 3 && nextIndex === 0 
       ? true 
-      : activeIndex === 0 && nextIndex === 3 
+      : displayedIndex === 0 && nextIndex === 3 
         ? false 
-        : nextIndex > activeIndex;
+        : nextIndex > displayedIndex;
 
     const yOut = isForward ? -25 : 25;
     const yIn = isForward ? 25 : -25;
@@ -114,6 +128,9 @@ export default function ProgramsEvents() {
     const targets = textRef.current?.querySelectorAll(`.${styles.animateText}`);
     
     if (targets && targets.length > 0) {
+      // Kill any active animations on these targets to prevent stuttering/jumping
+      gsap.killTweensOf(targets);
+      
       gsap.timeline({
         onComplete: () => {
           setDisplayedIndex(nextIndex);
@@ -147,6 +164,55 @@ export default function ProgramsEvents() {
       setDisplayedIndex(nextIndex);
       isTransitioning.current = false;
     }
+  };
+
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    if (typeof window === 'undefined' || window.innerWidth > 992) return;
+    if (isProgrammaticScroll.current) return;
+    
+    const container = e.currentTarget;
+    const scrollLeft = container.scrollLeft;
+    
+    // Step size is card width (250) + gap (24) = 274
+    const step = 274;
+    const index = Math.round(scrollLeft / step);
+    
+    // Update active index immediately to sync card focus and dots in real-time
+    if (index >= 0 && index < programs.length && index !== activeIndex) {
+      setActiveIndex(index);
+    }
+    
+    // Debounce the text sliding animation until scroll settles
+    if (scrollTimeoutRef.current) {
+      clearTimeout(scrollTimeoutRef.current);
+    }
+    
+    scrollTimeoutRef.current = setTimeout(() => {
+      if (index >= 0 && index < programs.length && index !== displayedIndex) {
+        animateTextTransition(index);
+      }
+    }, 150);
+  };
+
+  const handleNav = (nextIndex: number) => {
+    if (isTransitioning.current || nextIndex === activeIndex) return;
+    isTransitioning.current = true;
+
+    // Scroll the container on mobile to align with selected card
+    if (typeof window !== 'undefined' && window.innerWidth <= 992 && trackRef.current?.parentElement) {
+      const container = trackRef.current.parentElement;
+      isProgrammaticScroll.current = true;
+      container.scrollTo({
+        left: nextIndex * 274,
+        behavior: 'smooth'
+      });
+      
+      setTimeout(() => {
+        isProgrammaticScroll.current = false;
+      }, 500);
+    }
+
+    animateTextTransition(nextIndex);
   };
 
   const handlePrev = () => {
@@ -191,7 +257,10 @@ export default function ProgramsEvents() {
           </div>
 
           {/* Right Column: Dynamic Card Carousel */}
-          <div className={styles.carouselContainer}>
+          <div 
+            className={styles.carouselContainer}
+            onScroll={handleScroll}
+          >
             <div
               ref={trackRef}
               className={styles.carouselTrack}

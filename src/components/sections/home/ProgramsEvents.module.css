@@ -289,14 +289,21 @@
   
   .splitGrid {
     grid-template-columns: 1fr;
-    gap: var(--space-2xl);
+    gap: var(--space-md) !important; /* Move the card carousel up closer to the button */
+  }
+
+  .btnWrapper {
+    margin-bottom: var(--space-sm) !important; /* Move the card carousel up closer to the button */
   }
   
   .carouselContainer {
     overflow-x: auto !important;
     overflow-y: hidden !important;
-    padding-bottom: var(--space-md);
+    padding-top: 10px !important; /* Keep small padding to prevent clipping of active card and shadow */
+    padding-bottom: var(--space-lg) !important; /* Add bottom padding for shadow */
+    margin-top: -24px !important; /* Pull the cards up to remove empty space */
     scrollbar-width: none; /* Hide scrollbar for clean aesthetics */
+    scroll-snap-type: x mandatory; /* Enable scroll snapping on mobile swiping */
   }
   
   .carouselContainer::-webkit-scrollbar {
@@ -311,8 +318,10 @@
   .card {
     width: 250px;
     height: 280px;
-    opacity: 0.75;
+    opacity: 0.55 !important; /* Force visibility of inactive cards on mobile */
+    pointer-events: auto !important; /* Ensure they remain interactable */
     transform: none !important;
+    scroll-snap-align: start; /* Align cards with container edge on snap */
   }
   
   .activeCard {
