@@ -3,7 +3,8 @@
 import React from 'react';
 import './rural_impact.css';
 
-export default function RuralImpactCards({ theme = 'dark' }: { theme?: 'dark' | 'light' }) {
+/* ============ Special Section ============ */
+export default function SpecialSection({ theme = 'dark' }: { theme?: 'dark' | 'light' }) {
   const sectionClass = `rural-impact-section ${theme === 'light' ? 'light-theme' : ''}`;
   
   return (

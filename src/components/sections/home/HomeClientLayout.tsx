@@ -11,7 +11,7 @@ import BooksPreview from '@/components/sections/home/BooksPreview';
 import GetInvolved from '@/components/sections/home/GetInvolved';
 import ImpactSection from '@/components/sections/home/ImpactSection';
 import ProgramsEvents from '@/components/sections/home/ProgramsEvents';
-import RuralImpactCards from '@/components/sections/home/RuralImpactCards';
+// import SpecialSection from '@/components/sections/home/SpecialSection';
 
 import styles from '@/app/page.module.css';
 
@@ -76,9 +76,11 @@ export default function HomeClientLayout() {
       <div className={styles.scrollPanel}>
         <BooksPreview />
       </div>
+      {/* Special Section (Commented Out)
       <div className={styles.scrollPanel}>
-        <RuralImpactCards />
+        <SpecialSection />
       </div>
+      */}
       <div className={styles.scrollPanel}>
         <GetInvolved />
       </div>
