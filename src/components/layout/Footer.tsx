@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import TransitionLink from '@/components/ui/TransitionLink';
 import { Mail } from 'lucide-react';
 
@@ -39,7 +40,15 @@ export default function Footer() {
           <div className={styles.grid}>
             {/* About Column */}
             <div className={styles.aboutCol}>
-              <h3 className={styles.brand}>Heroes of the Earth</h3>
+              <TransitionLink href="/" className={styles.brandLink} style={{ display: 'inline-block', marginBottom: 'var(--space-sm)' }}>
+                <Image 
+                  src="/images/logo.png" 
+                  alt="Heroes of the Earth Logo" 
+                  width={150} 
+                  height={40}
+                  style={{ objectFit: 'contain' }}
+                />
+              </TransitionLink>
               <p className={styles.tagline}>Inspiring action through stories.</p>
               <p className={styles.aboutText}>
                 Heroes of the Earth is a youth-focused environmental education initiative. 

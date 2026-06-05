@@ -95,11 +95,11 @@ export default function Navbar() {
           <Image 
             src="/images/logo.png" 
             alt="Heroes of the Earth Logo" 
-            width={40} 
+            width={150} 
             height={40}
             priority
+            style={{ objectFit: 'contain' }}
           />
-          <span className={styles.brandText}>Heroes of the Earth</span>
         </TransitionLink>
 
         {/* Desktop Navigation */}
