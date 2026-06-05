@@ -5,6 +5,7 @@ import { Video, Award, MessageSquare, Flame, ArrowLeft, ArrowRight } from 'lucid
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import TransitionLink from '@/components/ui/TransitionLink';
 
 import styles from './ProgramsEvents.module.css';
 
@@ -178,9 +179,12 @@ export default function ProgramsEvents() {
             </div>
 
             <div className={`${styles.btnWrapper} ${styles.animateText}`}>
-              <button className={styles.ctaBtn}>
+              <TransitionLink 
+                href={`/contact?program=${encodeURIComponent(programs[displayedIndex].title)}`} 
+                className={styles.ctaBtn}
+              >
                 Register Interest &rarr;
-              </button>
+              </TransitionLink>
             </div>
 
 

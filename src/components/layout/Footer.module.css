@@ -3,29 +3,18 @@
   background: var(--color-ocean-deep);
   color: var(--color-white);
   padding: 0;
-  margin-top: var(--space-4xl);
-}
-
-/* White background behind the wave area to match the section above */
-.footer::before {
-  content: '';
-  position: absolute;
-  top: calc(-60px - var(--space-4xl));
-  left: 0;
-  width: 100%;
-  height: calc(60px + var(--space-4xl));
-  background: var(--color-white);
-  z-index: 0;
 }
 
 .waveContainer {
   position: absolute;
-  top: -60px;
+  top: -59px; /* overlap slightly to prevent sub-pixel hairline gaps */
   left: 0;
   width: 100%;
   height: 60px;
   overflow: hidden;
   line-height: 0;
+  z-index: 10;
+  pointer-events: none;
 }
 
 .wave {

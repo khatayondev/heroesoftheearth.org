@@ -8,7 +8,7 @@ export default function PromoBanner() {
   return (
     <section className="promo-banner-section">
       <div className="container">
-        <div className="promo-card" style={{ backgroundColor: '#2C5A47' }}>
+        <div className="promo-card" style={{ backgroundColor: 'var(--color-ocean-deep)' }}>
           
           <div className="promo-content">
             <h2>Heroes of the Earth, <br/><span className="highlight">your partner</span> in environmental education.</h2>

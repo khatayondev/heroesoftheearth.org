@@ -4,13 +4,13 @@
 
 /* Root Variables & Colors */
 :root {
-  --color-ocean: #2B6F96;
-  --color-ocean-deep: #133C55;
-  --color-sage: #2C5A47;
-  --color-sage-light: #5A8C74;
+  --color-ocean: #00BFFF;
+  --color-ocean-deep: #0C0F8E;
+  --color-sage: #00D100;
+  --color-sage-light: #1CE61C;
   --color-sand: #FAF7F2;
   --color-sand-dark: #E6DFD3;
-  --color-coral: #D96B43;
+  --color-coral: #FF9100;
   --color-bg: #F9F6F0;
   --color-dark: #1A2421;
   --color-text: #2D3D38;

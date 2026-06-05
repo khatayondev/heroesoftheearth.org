@@ -259,7 +259,6 @@ export default function YouthEngagementPage() {
 
         <div className={styles.container}>
           <div ref={challengesHeaderRef} className={styles.header}>
-            <span className={styles.subtitle}>Take Action</span>
             <h2 className={styles.title}>Youth Environmental Challenges</h2>
           </div>
           
@@ -275,7 +274,6 @@ export default function YouthEngagementPage() {
       <section className={styles.sectionGreen}>
         <div className={styles.container}>
           <div ref={toolsHeaderRef} className={styles.header}>
-            <span className={styles.subtitle}>Interactive Learning</span>
             <h2 className={styles.title}>Games & Tools</h2>
           </div>
 

@@ -10,7 +10,7 @@
     position: relative;
     overflow: hidden;
     min-height: 450px;
-    box-shadow: 0 20px 40px rgba(44, 90, 71, 0.2);
+    box-shadow: 0 20px 48px rgba(12, 15, 142, 0.15);
     align-items: stretch;
     border: 8px solid #ffffff;
 }
@@ -40,7 +40,7 @@
     font-style: normal;
     font-weight: 800;
     background-color: #ffffff;
-    color: var(--color-sage, #2C5A47);
+    color: var(--color-sage, #00D100);
     padding: 0px 16px;
     border-radius: 0;
     display: inline-block;
@@ -65,7 +65,7 @@
 
 .btn-white-solid {
     background-color: #ffffff;
-    color: var(--color-sage, #2C5A47);
+    color: var(--color-sage, #00D100);
     padding: 14px 32px;
     border-radius: 50px;
     font-weight: 600;
@@ -94,7 +94,7 @@
 
 .btn-white-outline:hover {
     background-color: #ffffff;
-    color: var(--color-sage, #2C5A47);
+    color: var(--color-sage, #00D100);
 }
 
 .promo-image-wrapper {

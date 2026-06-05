@@ -57,7 +57,6 @@ export default function GetInvolved() {
     <section ref={containerRef} className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.subtitle}>Take Action</span>
           <h2 className={styles.title}>Join Us in Creating Change</h2>
         </div>
 
@@ -76,7 +75,7 @@ export default function GetInvolved() {
           Together, we can empower the next generation to protect our planet.
         </p>
         
-        <Button variant="outline" size="lg" href="/contact" style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)', background: 'transparent' }}>
+        <Button variant="primary" size="lg" href="/contact">
           Partner with Us
         </Button>
       </div>

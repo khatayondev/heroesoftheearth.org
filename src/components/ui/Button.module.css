@@ -36,28 +36,29 @@
 
 /* Variants */
 .primary {
+  background: var(--color-sage);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(0, 209, 0, 0.15);
+}
+
+.primary:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 209, 0, 0.25);
+  background: var(--color-ocean-deep);
+  color: var(--color-white);
+}
+
+.secondary {
   background: var(--color-dark);
   color: var(--color-sand);
   box-shadow: 0 4px 12px rgba(26, 36, 33, 0.15);
 }
 
-.primary:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(26, 36, 33, 0.25);
-  background: var(--color-sage);
-  color: var(--color-white);
-}
-
-.secondary {
-  background: var(--color-sage);
-  color: var(--color-white);
-  box-shadow: 0 4px 12px rgba(44, 90, 71, 0.15);
-}
-
 .secondary:hover {
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(44, 90, 71, 0.25);
-  background: var(--color-sage-light);
+  box-shadow: 0 8px 20px rgba(26, 36, 33, 0.25);
+  background: var(--color-ocean);
+  color: var(--color-white);
 }
 
 .outline {
@@ -69,8 +70,8 @@
 
 .outline:hover {
   transform: translateY(-2px) scale(1.02);
-  background: rgba(44, 90, 71, 0.05);
-  box-shadow: 0 4px 12px rgba(44, 90, 71, 0.1);
+  background: rgba(0, 209, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 209, 0, 0.1);
 }
 
 .disabled {

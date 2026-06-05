@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { CheckCircle, AlertTriangle, ArrowRight } from 'lucide-react';
 import styles from './ContactForm.module.css';
 
@@ -9,6 +9,24 @@ export default function ContactForm() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('General Inquiry');
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      const program = params.get('program');
+      const paramSubject = params.get('subject');
+
+      if (program) {
+        setSubject('School Programs');
+        setMessage(`Hi! I am interested in registering for the "${program}" program. Please send me more details on how to get started.`);
+      } else if (paramSubject) {
+        const validSubjects = ['General Inquiry', 'School Programs', 'Partnership', 'Book Purchase', 'Youth Challenges'];
+        if (validSubjects.includes(paramSubject)) {
+          setSubject(paramSubject);
+        }
+      }
+    }
+  }, []);
   
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
   const [statusMessage, setStatusMessage] = useState('');

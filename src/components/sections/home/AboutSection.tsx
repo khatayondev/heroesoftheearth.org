@@ -136,7 +136,6 @@ export default function AboutSection() {
                 variant="outline" 
                 size="sm" 
                 onClick={() => setIsModalOpen(true)}
-                style={{ borderColor: 'var(--color-white)', color: 'var(--color-white)' }}
               >
                 Learn More
               </Button>

@@ -191,7 +191,6 @@ export default function SchoolsPage() {
 
         <div className={styles.container}>
           <div className={styles.header}>
-            <span className={styles.subtitle}>Curriculum Material</span>
             <h2 className={styles.title}>Premium Teaching Resources</h2>
           </div>
           <div className={styles.grid}>
@@ -212,7 +211,6 @@ export default function SchoolsPage() {
       <section className={styles.sectionSand}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <span className={styles.subtitle}>Interactive Programs</span>
             <h2 className={styles.title}>School Visits & Workshops</h2>
           </div>
           <div className={styles.workshopsList}>
@@ -262,7 +260,6 @@ export default function SchoolsPage() {
       <section className={styles.section}>
         <div className={styles.container}>
           <div className={styles.header}>
-            <span className={styles.subtitle}>Resource Library</span>
             <h2 className={styles.title}>Free Classroom Downloads</h2>
           </div>
           

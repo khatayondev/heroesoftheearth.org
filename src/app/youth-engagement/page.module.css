@@ -98,16 +98,12 @@
 
 
 .sectionGreen {
-  background-color: var(--color-sage); /* Deep forest sage green */
+  background-color: var(--color-sand);
   padding: var(--space-4xl) 0;
 }
 
-.sectionGreen .subtitle {
-  color: #b1d8b7; /* Soft light-green badge text */
-}
-
 .sectionGreen .title {
-  color: var(--color-white); /* High contrast white heading */
+  color: var(--color-dark);
 }
 
 .container {

@@ -51,7 +51,6 @@ export default function BooksPreview() {
     <section ref={containerRef} className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.subtitle}>Educational Literature</span>
           <h2 className={styles.title}>Discover Our Exciting Books</h2>
           <p className={styles.sectionDesc} style={{ 
             maxWidth: '650px', 

@@ -36,7 +36,6 @@ export default function ImpactSection() {
     <section ref={containerRef} className={styles.section}>
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.subtitle}>Our Footprint</span>
           <h2 className={styles.title}>Making a Difference</h2>
         </div>
 

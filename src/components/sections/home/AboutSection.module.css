@@ -135,13 +135,21 @@
 /* Card Specifics */
 .cardWideGreen {
   grid-column: span 2;
-  background-color: var(--color-sage);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: 1px solid var(--color-sand-dark);
 }
 
-.cardWideGreen h3,
+.cardWideGreen h3 {
+  color: var(--color-dark);
+}
+
 .cardWideGreen p {
-  color: var(--color-white);
+  color: var(--color-text-light);
+}
+
+.cardWideGreen .metric {
+  color: var(--color-sage);
 }
 
 .cardSquareSand {
@@ -153,8 +161,21 @@
 
 .cardSquareCoral {
   grid-column: span 1;
-  background-color: var(--color-coral);
-  color: var(--color-white);
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  border: 1px solid var(--color-sand-dark);
+}
+
+.cardSquareCoral h3 {
+  color: var(--color-dark);
+}
+
+.cardSquareCoral p {
+  color: var(--color-text-light);
+}
+
+.cardSquareCoral .metric {
+  color: var(--color-coral);
 }
 
 .cardWideImage {
