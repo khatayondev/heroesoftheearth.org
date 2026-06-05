@@ -312,7 +312,7 @@
   
   .carouselTrack {
     transform: none !important;
-    padding: 0 var(--space-xs);
+    padding: 0 calc(50% - 125px) !important; /* Center padding to allow first and last cards to center snap */
   }
   
   .card {
@@ -321,7 +321,7 @@
     opacity: 0.55 !important; /* Force visibility of inactive cards on mobile */
     pointer-events: auto !important; /* Ensure they remain interactable */
     transform: none !important;
-    scroll-snap-align: start; /* Align cards with container edge on snap */
+    scroll-snap-align: center; /* Center snap the active card on mobile */
   }
   
   .activeCard {
