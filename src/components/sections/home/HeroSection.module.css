@@ -116,28 +116,12 @@
 
 .backgroundVideo {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(1.35); /* Scale pushes YouTube UI off-screen */
-  width: 100vw;
-  height: 100vh;
-  min-width: 100%;
-  min-height: 100%;
-  border: none;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   pointer-events: none;
-}
-
-/* Maintain aspect ratio to cover entire screen without black bars */
-@media (min-aspect-ratio: 16/9) {
-  .backgroundVideo {
-    height: 56.25vw;
-  }
-}
-
-@media (max-aspect-ratio: 16/9) {
-  .backgroundVideo {
-    width: 177.78vh;
-  }
 }
 
 /* Mockup White Pill Button */

@@ -36,14 +36,17 @@ export default function HeroSection() {
 
   return (
     <section ref={containerRef} className={styles.hero}>
-      {/* YouTube Background Video */}
+      {/* Local Background Video */}
       <div className={styles.videoWrapper}>
-        <iframe 
+        <video 
           className={styles.backgroundVideo}
-          src="https://www.youtube.com/embed/aoLh_zTZ-qY?autoplay=1&mute=1&loop=1&playlist=aoLh_zTZ-qY&controls=0&showinfo=0&modestbranding=1&rel=0&disablekb=1&iv_load_policy=3&playsinline=1"
-          title="Heroes of the Earth Video"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        ></iframe>
+          autoPlay 
+          muted 
+          loop 
+          playsInline
+        >
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
+        </video>
       </div>
 
       {/* Dark overlay for text readability */}
