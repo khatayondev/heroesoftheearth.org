@@ -33,23 +33,63 @@ export default function YouthEngagementPage() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [statusMessage, setStatusMessage] = useState('');
+
+  const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_KEY || '';
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || !email || !age) return;
     
-    setIsSubmitting(true);
-    // Simulate API request
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitted(true);
-      setName('');
-      setEmail('');
-      setAge('');
-    }, 1200);
+    setStatus('submitting');
+    
+    if (!accessKey) {
+      // Simulate API request if no key
+      setTimeout(() => {
+        setStatus('success');
+        setStatusMessage('🎉 Welcome to the team! (Simulated mode)');
+        setName('');
+        setEmail('');
+        setAge('');
+      }, 1200);
+      return;
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name,
+          email,
+          age_group: age,
+          subject: `[Youth Program Sign Up] - ${name}`,
+          message: `${name} has signed up for the Heroes of the Earth Youth Program.\nAge Group: ${age}\nEmail: ${email}`,
+        }),
+      });
+
+      const result = await response.json();
+      if (response.status === 200) {
+        setStatus('success');
+        setStatusMessage('🎉 Welcome to the team! We have sent a confirmation email to start your environmental training.');
+        setName('');
+        setEmail('');
+        setAge('');
+      } else {
+        setStatus('error');
+        setStatusMessage(result.message || 'Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Youth Form Submit Error:', error);
+      setStatus('error');
+      setStatusMessage('Network error. Please check your connection and try again.');
+    }
   };
 
   useGSAP(() => {
@@ -275,11 +315,19 @@ export default function YouthEngagementPage() {
                 Enroll in the Heroes of the Earth Youth Program to track your XP, earn badges, and gain access to exclusive missions.
               </p>
 
-              {submitted ? (
+              {status === 'success' && (
                 <div className={styles.successMsg}>
-                  🎉 Welcome to the team! We have sent a confirmation email to start your environmental training.
+                  {statusMessage}
                 </div>
-              ) : (
+              )}
+
+              {status === 'error' && (
+                <div className={styles.errorMsg}>
+                  {statusMessage}
+                </div>
+              )}
+
+              {status !== 'success' && (
                 <form onSubmit={handleSubmit} className={styles.form}>
                   <div className={styles.formGroup}>
                     <label htmlFor="name" className={styles.label}>Full Name</label>
@@ -338,10 +386,10 @@ export default function YouthEngagementPage() {
                   <Button 
                     type="submit" 
                     variant="primary" 
-                    disabled={isSubmitting}
+                    disabled={status === 'submitting'}
                     style={{ width: '100%', marginTop: 'var(--space-md)', justifyContent: 'center' }}
                   >
-                    {isSubmitting ? 'Enrolling...' : 'Join as a Youth Hero'}
+                    {status === 'submitting' ? 'Enrolling...' : 'Join as a Youth Hero'}
                     <Send size={16} style={{ marginLeft: '8px' }} />
                   </Button>
                 </form>
