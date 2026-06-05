@@ -76,7 +76,7 @@
 
 .headline {
   font-family: var(--font-heading);
-  font-size: clamp(3rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 6vw, 4.5rem);
   font-weight: 800;
   line-height: 1.15;
   color: var(--color-white);
@@ -144,20 +144,20 @@
 
 /* Mockup Lime Green Pill Button */
 .mockupBtnLime {
-  background-color: #BFFF00 !important; /* exact bright vibrant lime green/yellow from mockup! */
-  color: var(--color-dark) !important;
+  background-color: var(--color-sage) !important;
+  color: var(--color-white) !important;
   padding: 0.9rem 2.2rem !important;
   font-size: 1rem !important;
   font-weight: 700 !important;
   border-radius: var(--radius-full) !important;
-  box-shadow: 0 4px 14px rgba(191, 255, 0, 0.15) !important;
+  box-shadow: 0 4px 14px rgba(0, 209, 0, 0.15) !important;
   transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast) !important;
 }
 
 .mockupBtnLime:hover {
   transform: translateY(-2px) scale(1.02) !important;
-  box-shadow: 0 8px 24px rgba(191, 255, 0, 0.35) !important;
-  background-color: #A3E600 !important;
+  box-shadow: 0 8px 24px rgba(0, 209, 0, 0.35) !important;
+  background-color: var(--color-ocean-deep) !important;
 }
 
 /* Mockup Bottom-Left Thin Outline Capsule */
@@ -311,5 +311,22 @@
   .outlineBadge {
     font-size: 0.8rem;
     padding: 0.5rem 1.1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto var(--space-md) auto;
+    gap: var(--space-sm);
+  }
+
+  .mockupBtnLime, .mockupBtnWhite {
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0.85rem 1.8rem !important;
   }
 }
