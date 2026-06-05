@@ -70,6 +70,12 @@ export default function HeroSection() {
             >
               Partner with Us
             </Button>
+            <Button 
+              href="/contact" 
+              className={styles.mockupBtnWhite}
+            >
+              Talk to us
+            </Button>
           </div>
         </div>
       </div>
