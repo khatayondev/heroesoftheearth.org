@@ -256,83 +256,97 @@ export default function YouthEngagementPage() {
       {/* Start Journey Signup Form Section */}
       <section className={styles.signupSection}>
         <div className={styles.container}>
-          <div ref={signupCardRef} className={styles.signupCard}>
-            <h2 className={styles.signupTitle}>Start Your Journey</h2>
-            <p className={styles.signupDesc}>
-              Enroll in the Heroes of the Earth Youth Program to track your XP, earn badges, and gain access to exclusive missions.
-            </p>
+          <div ref={signupCardRef} className={styles.signupContainer}>
+            
+            {/* Left Image Side */}
+            <div className={styles.signupImageSide}>
+              <Image 
+                src="/images/youth-hero.png" /* reusing youth-hero or we can use another image */
+                alt="Youth planting trees"
+                fill
+                className={styles.signupImage}
+              />
+            </div>
 
-            {submitted ? (
-              <div className={styles.successMsg}>
-                🎉 Welcome to the team! We have sent a confirmation email to start your environmental training.
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className={styles.form}>
-                <div className={styles.formGroup}>
-                  <label htmlFor="name" className={styles.label}>Full Name</label>
-                  <div style={{ position: 'relative' }}>
-                    <User size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
-                    <input
-                      type="text"
-                      id="name"
-                      className={styles.input}
-                      placeholder="Jane Doe"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                      style={{ paddingLeft: '2.5rem' }}
-                      required
-                    />
-                  </div>
+            {/* Right Form Side */}
+            <div className={styles.signupCard}>
+              <h2 className={styles.signupTitle}>Start Your Journey</h2>
+              <p className={styles.signupDesc}>
+                Enroll in the Heroes of the Earth Youth Program to track your XP, earn badges, and gain access to exclusive missions.
+              </p>
+
+              {submitted ? (
+                <div className={styles.successMsg}>
+                  🎉 Welcome to the team! We have sent a confirmation email to start your environmental training.
                 </div>
-
-                <div className={styles.formGroup}>
-                  <label htmlFor="email" className={styles.label}>Email Address</label>
-                  <div style={{ position: 'relative' }}>
-                    <Mail size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
-                    <input
-                      type="email"
-                      id="email"
-                      className={styles.input}
-                      placeholder="jane@example.com"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      style={{ paddingLeft: '2.5rem' }}
-                      required
-                    />
+              ) : (
+                <form onSubmit={handleSubmit} className={styles.form}>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="name" className={styles.label}>Full Name</label>
+                    <div style={{ position: 'relative' }}>
+                      <User size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
+                      <input
+                        type="text"
+                        id="name"
+                        className={styles.input}
+                        placeholder="Jane Doe"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        style={{ paddingLeft: '2.5rem' }}
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className={styles.formGroup}>
-                  <label htmlFor="age" className={styles.label}>Age Group</label>
-                  <div style={{ position: 'relative' }}>
-                    <Calendar size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
-                    <select
-                      id="age"
-                      className={styles.input}
-                      value={age}
-                      onChange={(e) => setAge(e.target.value)}
-                      style={{ paddingLeft: '2.5rem', appearance: 'none', backgroundColor: 'var(--color-white)' }}
-                      required
-                    >
-                      <option value="" disabled>Select your age group</option>
-                      <option value="6-9">6 - 9 years old</option>
-                      <option value="10-14">10 - 14 years old</option>
-                      <option value="15-18">15 - 18 years old</option>
-                    </select>
+                  <div className={styles.formGroup}>
+                    <label htmlFor="email" className={styles.label}>Email Address</label>
+                    <div style={{ position: 'relative' }}>
+                      <Mail size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
+                      <input
+                        type="email"
+                        id="email"
+                        className={styles.input}
+                        placeholder="jane@example.com"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        style={{ paddingLeft: '2.5rem' }}
+                        required
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <Button 
-                  type="submit" 
-                  variant="primary" 
-                  disabled={isSubmitting}
-                  style={{ width: '100%', marginTop: 'var(--space-md)', justifyContent: 'center' }}
-                >
-                  {isSubmitting ? 'Enrolling...' : 'Join as a Youth Hero'}
-                  <Send size={16} style={{ marginLeft: '8px' }} />
-                </Button>
-              </form>
-            )}
+                  <div className={styles.formGroup}>
+                    <label htmlFor="age" className={styles.label}>Age Group</label>
+                    <div style={{ position: 'relative' }}>
+                      <Calendar size={18} style={{ position: 'absolute', left: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-sage)' }} />
+                      <select
+                        id="age"
+                        className={styles.input}
+                        value={age}
+                        onChange={(e) => setAge(e.target.value)}
+                        style={{ paddingLeft: '2.5rem', appearance: 'none', backgroundColor: 'var(--color-white)' }}
+                        required
+                      >
+                        <option value="" disabled>Select your age group</option>
+                        <option value="6-9">6 - 9 years old</option>
+                        <option value="10-14">10 - 14 years old</option>
+                        <option value="15-18">15 - 18 years old</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <Button 
+                    type="submit" 
+                    variant="primary" 
+                    disabled={isSubmitting}
+                    style={{ width: '100%', marginTop: 'var(--space-md)', justifyContent: 'center' }}
+                  >
+                    {isSubmitting ? 'Enrolling...' : 'Join as a Youth Hero'}
+                    <Send size={16} style={{ marginLeft: '8px' }} />
+                  </Button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
